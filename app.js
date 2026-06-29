@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const db = require('./config/mongoose-connection');
+const index = require('./routes/index');
 
 const userRoute = require('./routes/userRouter');
 const ownerRoute = require('./routes/ownerRouter');
@@ -20,6 +21,7 @@ app.set("view engine" , "ejs");
 app.use("/user", userRoute);
 app.use("/product" , productRoute);
 app.use("/owner" , ownerRoute);
+app.use("/", index);
 
 app.listen(3000,()=>{
     console.log("Server is running on the port no 3000");
