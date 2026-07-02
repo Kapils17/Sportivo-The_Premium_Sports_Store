@@ -4,7 +4,7 @@ const config = require('config');
 
 const dbgr = require('debug')("development:mongoose");
 
-mongoose.connect(`${config.get("MongoDB_URI")}/scatch`)
+mongoose.connect(`${config.get("MongoDB_URI")}/sportivo`)
 .then(function(){
    dbgr("Database Connected");
 })
